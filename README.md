@@ -41,6 +41,7 @@ A template for the assignment is provided [here](http://www.cis.umassd.edu/~dkoo
 Create a vertical bar chart, as in Part 3b of Assignment 1 but using D3. You may use the totals listed there or use your Part 3a code. You should draw both an x-axis and a y-axis and label them.
 
 ![Example Solution for Part 1](http://www.cis.umassd.edu/~dkoop/dsc530-2017sp/a2/solution-part1.png)
+
 *Example Solution for Part 1*
 
 Hints
@@ -56,6 +57,7 @@ Hints
 Create a **new** bar chart that shows, via color, the number of refugees from each region. Your bar chart will be similar to Part 1 except that each bar will be divided into pieces corresponding to the regions. Add a legend that indicates the relationship between regions and colors.
 
 ![Example Solution for Part 2](http://www.cis.umassd.edu/~dkoop/dsc530-2017sp/a2/solution-part2.png)
+
 *Example Solution for Part 2*
 
 Hints
@@ -80,6 +82,7 @@ Note that this code requires you to implement the updateLineChart method that ta
        .text(function(d) { return d; });
 
 ![Example Solution for Part 3](http://www.cis.umassd.edu/~dkoop/dsc530-2017sp/a2/solution-part3.png)
+
 *Example Solution for Part 3*
 
 Hints
