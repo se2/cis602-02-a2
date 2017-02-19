@@ -18,11 +18,11 @@ var chart = d3.select("#linechart")
 /* draw line chart */
 var line = d3.line()
 				.x(function(d) { return x(d["Year"]); })
-				.y(function(d) { return y(d["Africa"]); });
+				.y(function(d) { return y(d[countries[0]]); });
 
 var path = chart.append("path")
 				.datum(data)
-				.attr("fill", "none")
+				.attr("fill", "transparent")
 				.attr("stroke", "#7BA1C2")
 				.attr("stroke-width", 1.5)
 				.attr("d", line);
@@ -54,15 +54,15 @@ addAxisLabel(chart, {
 
 /* update line chart function */
 var updateLineChart = function(region) {
-	var chart = d3.select("#linechart")
-					.transition();
+	var chart = d3.select("#linechart");
 	/* update line with new data */
 	var line = d3.line()
 					.x(function(d) { return x(d["Year"]); })
 					.y(function(d) { return y(d[region]); });
 	/* re-draw line with new data */
 	chart.select("path")
-			.duration(1000)
+			.transition()
+			.duration(500)
             .attr("d", line);
 }
 
