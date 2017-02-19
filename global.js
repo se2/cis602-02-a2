@@ -2,9 +2,8 @@ var countries = Object.keys(refugees[0]).filter(function(k) {
     return k != "Year";
 });
 
-/* return totals of refugees for each year in format of {year: year, value: total} */
+/* return totals of refugees for each year and push to refugees */
 var getTotals = function(refugees) {
-    // var totals = [];
     refugees.forEach(function(o) {
         /* convert javascript object to an array */
         var array = Object.keys(o).map(function(key) {

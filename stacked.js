@@ -72,7 +72,7 @@ note.append("text")
         .attr("y", radius / 2)
         .text(function(d) { return d; });
 
-/* append color bars */
+/* append color circles */
 note.append("circle")
         .attr("y", 0)
         .attr("cx", width)
