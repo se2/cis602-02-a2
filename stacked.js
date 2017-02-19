@@ -53,7 +53,7 @@ addAxisLabel(chart, {
 });
 
 /* note of relationship of colors - countries */
-var radius = 10,
+var radius = 9,
     noteFontSize = 12;
 
 var note = chart.append("g")
@@ -62,7 +62,7 @@ var note = chart.append("g")
                     .data(countries)
                     .enter().append("g")
                         .attr("class", function(d) { return d; })
-                        .attr("transform", function(d, i) { return "translate(0," + (i * radius * 2) + ")"; });
+                        .attr("transform", function(d, i) { return "translate(0," + (i * (radius + 1) * 2) + ")"; });
 
 /* append country names */
 note.append("text")
@@ -74,8 +74,8 @@ note.append("text")
 
 /* append color circles */
 note.append("circle")
-        .attr("y", 0)
         .attr("cx", width)
-        .attr("r", radius - 1)
+        .attr("cy", 0)
+        .attr("r", radius)
         .attr("fill", color);
 
