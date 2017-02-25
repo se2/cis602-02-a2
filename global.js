@@ -4,17 +4,11 @@ var countries = Object.keys(refugees[0]).filter(function(k) {
 
 /* return totals of refugees for each year and push to refugees */
 var getTotals = function(refugees) {
-    refugees.forEach(function(o) {
-        /* convert javascript object to an array */
-        var array = Object.keys(o).map(function(key) {
-            return o[key];
-        });
-        /* get sum of refugees for each year */
-        var sum = array.reduce(function(s, e) {
-            return s + e;
-        }) - array[0];
-        /* push to array */
-        o["Total"] = sum;
+    refugees.map(function(o) {
+        var total = Object.keys(o).reduce(function (s, k) {
+            return s + (k !== 'Year' && o[k]);
+        }, 0);
+        o["Total"] = total;
     });
     return refugees;
 }
